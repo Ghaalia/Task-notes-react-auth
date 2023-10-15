@@ -5,10 +5,12 @@ import { logout } from "../api/auth";
 
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     setUser(false);
+    navigate("/login");
   };
 
   return (
